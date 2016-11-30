@@ -3,3 +3,10 @@ bower_components/
 .idea/
 .sass-cache/
 .DS_Store
+dist/templates/landing.html
+dist/styles/style.css
+dist/templates/home.html
+dist/scripts/controllers/LandingCtrl.js
+dist/scripts/app.js
+dist/index.html
+dist/assets/images/bloc-logo-white.png
