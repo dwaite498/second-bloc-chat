@@ -34,6 +34,12 @@ firebase.initializeApp(config);
   function Room($firebaseArray) {
     var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
+    rooms.$add({rooms: 'room'}).then(function(ref) {
+        var id = ref.key;
+        console.log('added record with id ' + id);
+        rooms.$indexFor(id)
+    })
+    
 
     return {
       all: rooms
@@ -45,15 +51,28 @@ firebase.initializeApp(config);
     .factory('Room', ['$firebaseArray', Room]);
 })();
 
+
+
+
 //this is for the next assignment
-/*
+
+
+
 (function() {
     function AddRoom($firebaseArray) {
-        var database = firebase.database().ref().child("rooms");
-        database.push('Hello World');
+        var ref = firebase.database().ref().child("rooms");
+        var rooms = $firebaseArray(ref);
+        rooms.$add({rooms: 'room'}).then(function(ref) {
+        var id = ref.key;
+        console.log('added record with id ' + id);
+        rooms.$indexFor(id)
+    })
+        return {
+            all: rooms
+        };
         
     }
     angular
         .module('blocChat')
-        .factory('AddRoom', ['$firebaseArray', AddRoom]);
-})();*/
+        .service('AddRoom', ['$firebaseArray', AddRoom]);
+})();
