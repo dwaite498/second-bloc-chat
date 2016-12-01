@@ -1,3 +1,4 @@
+//initialize the angular database inside the app
 var config = {
             apiKey: "AIzaSyBcVGgPDu9cEJ5wRJFcxDFjYKh0Ktz3gYI",
             authDomain: "bloc-chat-6b055.firebaseapp.com",
@@ -6,6 +7,7 @@ var config = {
         };
 firebase.initializeApp(config);
 
+//stateprovider for the app, directing routing the states to the templates and controllers
 (function() {
     function config($stateProvider, $locationProvider) {
         $locationProvider
@@ -16,7 +18,7 @@ firebase.initializeApp(config);
         $stateProvider
             .state('landing', {
                 url: '/',
-                controller: 'LandingCtrl as landing',
+                controller: 'RoomCtrl as landing',
                 templateUrl: 'templates/landing.html'
             });
         
@@ -26,6 +28,8 @@ firebase.initializeApp(config);
         .config(config);
 })();
 
+
+//pulls the firebase list of rooms and leaves them available for injection
 (function() {
   function Room($firebaseArray) {
     var ref = firebase.database().ref().child("rooms");
@@ -41,3 +45,15 @@ firebase.initializeApp(config);
     .factory('Room', ['$firebaseArray', Room]);
 })();
 
+//this is for the next assignment
+/*
+(function() {
+    function AddRoom($firebaseArray) {
+        var database = firebase.database().ref().child("rooms");
+        database.push('Hello World');
+        
+    }
+    angular
+        .module('blocChat')
+        .factory('AddRoom', ['$firebaseArray', AddRoom]);
+})();*/
