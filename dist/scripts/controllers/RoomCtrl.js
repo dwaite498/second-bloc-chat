@@ -2,14 +2,11 @@
 (function() {
     function RoomCtrl(Room) {
         this.rooms = Room.all;
-        
-        function addRoom () {
-           this.addRoom = Room.add; 
-        }
+        this.add = Room.addRoom; 
         
     }
     
     angular
         .module('blocChat')
-        .controller('RoomCtrl', ["Room", "AddRoom", RoomCtrl]);
+        .controller('RoomCtrl', ["Room", RoomCtrl]);
 })();
