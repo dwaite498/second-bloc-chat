@@ -3,3 +3,26 @@ logo {
     left: 0px;
 }
 
+.sideBar {
+    position: relative;
+    border: 2px solid black;
+    width: 306px;
+    background: #d3d3d3 ;
+    font-size: 125%;
+    float: left;
+    top: 96px;
+    
+}
+
+.sideBar tr {
+    text-align: center;
+}
+
+.welcome {
+    margin-left: 631px;
+    margin-bottom: 500px;
+    top: 5px;
+    text-align: center;
+    width: 300px;
+    float: left;
+}

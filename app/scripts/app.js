@@ -16,10 +16,10 @@ firebase.initializeApp(config);
                 requireBase: false
             });
         $stateProvider
-            .state('landing', {
+            .state('room', {
                 url: '/',
-                controller: 'RoomCtrl as landing',
-                templateUrl: 'templates/landing.html'
+                controller: 'RoomCtrl as room',
+                templateUrl: 'templates/room.html'
             });
         
         }
