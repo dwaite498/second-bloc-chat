@@ -10,3 +10,6 @@ dist/scripts/controllers/LandingCtrl.js
 dist/scripts/app.js
 dist/index.html
 dist/assets/images/bloc-logo-white.png
+dist/scripts/controllers/CreateRoomModal.js
+dist/styles/modal.css
+dist/templates/createRoomModal.html
