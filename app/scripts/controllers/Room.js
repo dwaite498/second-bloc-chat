@@ -11,6 +11,7 @@
         rooms.$indexFor(id)
       })
     };
+      
 
     return {
       all: rooms,
