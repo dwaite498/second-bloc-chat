@@ -16,7 +16,7 @@
                 <div class="col-xs-3">
                     <table class="sideBar table-striped table-hover" ng-controller="SidebarCtrl as sidebar">
                         <th>
-                            <button type="button" class="btn button-primary" data-toggle="modal" data-target="#mymodal" ng-click="sidebar.createRoom()">Create New Chat Room</button>
+                            <button type="button" class="btn button-primary" data-toggle="modal" data-target="#mymodal">Create New Chat Room</button>
                         </th>
                         <tr ng-repeat="room in sidebar.rooms track by $index">
                             <td>{{ room.name }}</td>
@@ -27,8 +27,25 @@
                     <ui-view> </ui-view>
                 </div>
             </div>
-            <div class="modal-fade" id="mymodal">
-            
+            <div class="modal fade" id="mymodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Create New Chat Room</h2>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Room Name:<input type="text" class="form-control" id=rmn></h4>
+                        </div>
+                        <div class="modal-test">
+                            <p>test {{}}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary pull-right">Create Room</button>
+                            <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Cancel</button>
+                        </div>
+                    
+                    </div>
+                </div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
