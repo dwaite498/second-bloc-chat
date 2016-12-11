@@ -20,6 +20,11 @@ firebase.initializeApp(config);
                 url: '/',
                 controller: 'RoomCtrl as room',
                 templateUrl: 'templates/room.html'
+            })
+            .state('chatroom', {
+                url: '/chatroom',
+                controller: 'messagesFactory',
+                templateUrl: 'templates/chatroom.html'
             });
         
         }
