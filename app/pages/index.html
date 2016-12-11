@@ -18,9 +18,9 @@
                         <th>
                             <button type="button" class="btn button-primary" data-toggle="modal" data-target="#mymodal">Create New Chat Room</button>
                         </th>
-                        <tr ng-repeat="room in sidebar.rooms track by $index">
+                        <tr ng-repeat="room in sidebar.rooms track by $index" onclick="loadChat" style="cursor: pointer">
                             <td>{{ room.name }}
-                            <button type="button" class="close pull-left">×</button>
+                            <button type="button" class="close pull-left" ng-click="sidebar.deleteRoom()">×</button>
                             </td>
                         </tr>
                     </table>
@@ -42,7 +42,7 @@
                             <p ng-bind="roomname">test</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary pull-right" ng-click="mctrl.createRoom()">Create Room</button>
+                            <button type="button" class="btn btn-primary pull-right" ng-click="mctrl.createRoom()" data-dismiss="modal">Create Room</button>
                             <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Cancel</button>
                         </div>
                     
