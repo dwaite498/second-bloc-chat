@@ -11,10 +11,19 @@
         rooms.$indexFor(id)
       })
     };
+      
+    var deleteRoom = function(roomName) {
+       rooms.$remove({name: roomName}).then(function(ref) {
+           var name = roomName;
+           console.log('removed record with name ' + name);
+           rooms.$indexFor(name);
+       })
+    };
 
     return {
       all: rooms,
-      add: addRoom
+      add: addRoom,
+      remove: deleteRoom
     };
   }
 

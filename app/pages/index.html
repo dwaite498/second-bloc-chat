@@ -16,10 +16,12 @@
                 <div class="col-xs-3">
                     <table class="sideBar table-striped table-hover" ng-controller="SidebarCtrl as sidebar">
                         <th>
-                            <button type="button" class="btn button-primary" data-toggle="modal" data-target="#mymodal" ng-click="sidebar.createRoom()">Create New Chat Room</button>
+                            <button type="button" class="btn button-primary" data-toggle="modal" data-target="#mymodal">Create New Chat Room</button>
                         </th>
-                        <tr ng-repeat="room in sidebar.rooms track by $index">
-                            <td>{{ room.name }}</td>
+                        <tr ng-repeat="room in sidebar.rooms track by $index" onclick="loadChat" style="cursor: pointer">
+                            <td>{{ room.name }}
+                            <button type="button" class="close pull-left" ng-click="sidebar.deleteRoom()">×</button>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -27,8 +29,25 @@
                     <ui-view> </ui-view>
                 </div>
             </div>
-            <div class="modal-fade" id="mymodal">
-            
+            <div class="modal fade" id="mymodal" ng-controller="ModalCtrl as mctrl">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Create New Chat Room</h2>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Room Name:<input type="text" class="form-control" ng-model="roomname"></h4>
+                        </div>
+                        <div class="modal-test">
+                            <p ng-bind="roomname">test</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary pull-right" ng-click="mctrl.createRoom()" data-dismiss="modal">Create Room</button>
+                            <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Cancel</button>
+                        </div>
+                    
+                    </div>
+                </div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -40,9 +59,8 @@
         <script src="/scripts/app.js"></script>
         <script src="/scripts/controllers/Room.js"></script>
         <script src="/scripts/controllers/RoomCtrl.js"></script>
-        <script src="/scripts/controllers/AddRoomCtrl.js"></script>
+        <script src="/scripts/controllers/ModalCtrl.js"></script>
         <script src="/scripts/controllers/SidebarCtrl.js"></script>
-        <script src="/scripts/controllers/RoomModal.js"></script>
 
     </body>
 </html>
