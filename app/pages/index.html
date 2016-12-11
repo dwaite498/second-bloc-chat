@@ -20,7 +20,7 @@
                         </th>
                         <tr ng-repeat="room in sidebar.rooms track by $index" onclick="loadChat" style="cursor: pointer">
                             <td>{{ room.name }}
-                            <button type="button" class="close pull-left" ng-click="sidebar.deleteRoom()">×</button>
+                            <button type="button" class="close pull-left" data-toggle="modal" data-target="#delrmmodal">×</button>
                             </td>
                         </tr>
                     </table>
@@ -29,6 +29,7 @@
                     <ui-view> </ui-view>
                 </div>
             </div>
+            
             <div class="modal fade" id="mymodal" ng-controller="ModalCtrl as mctrl">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -43,6 +44,20 @@
                             <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Cancel</button>
                         </div>
                     
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="delrmmodal" ng-controller="RoomCtrl as room">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Confirm to delete chat room</h2>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-primary pull-right" ng-click="room.deleteroom()" data-dismiss="modal">Confirm Deletion</button>
+                            <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Cancel</button>
+                            <br />
+                        </div>
                     </div>
                 </div>
             </div>
