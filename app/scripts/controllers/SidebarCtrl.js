@@ -1,9 +1,11 @@
 (function() {
     function SidebarCtrl(Room) {
         this.rooms = Room.all;
-        this.createRoom = function() {
-            Room.add("new room");
-        }    
+        
+  
+        this.deleteRoom = function() {
+            Room.remove();
+        }
     }
     angular
         .module('blocChat')
