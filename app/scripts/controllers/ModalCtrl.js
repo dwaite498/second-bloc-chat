@@ -6,5 +6,5 @@
     
     angular
         .module("blocChat")
-        .controller("ModalCtrl", ["Room", ModalCtrl)
+        .controller("ModalCtrl", ["Room", ModalCtrl])
 })();

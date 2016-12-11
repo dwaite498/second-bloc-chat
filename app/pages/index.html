@@ -34,10 +34,10 @@
                             <h2>Create New Chat Room</h2>
                         </div>
                         <div class="modal-body">
-                            <h4>Room Name:<input type="text" class="form-control" id=rmn></h4>
+                            <h4>Room Name:<input type="text" class="form-control" ng-model="roomname"></h4>
                         </div>
                         <div class="modal-test">
-                            <p>test {{}}</p>
+                            <p ng-bind="roomname">test</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary pull-right">Create Room</button>
@@ -59,7 +59,6 @@
         <script src="/scripts/controllers/RoomCtrl.js"></script>
         <script src="/scripts/controllers/ModalCtrl.js"></script>
         <script src="/scripts/controllers/SidebarCtrl.js"></script>
-        <script src="/scripts/controllers/RoomModal.js"></script>
 
     </body>
 </html>
