@@ -23,7 +23,7 @@ firebase.initializeApp(config);
             })
             .state('chatroom', {
                 url: '/chatroom',
-                controller: 'messagesFactory',
+                controller: 'ChatRoom as chatroom',
                 templateUrl: 'templates/chatroom.html'
             });
         

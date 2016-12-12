@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="/styles/style.css">
         <link rel="stylesheet" type="text/css" href="/styles/modal.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/styles/chatroom.css">
     </head>
     <body>
         <div class="container-fluid">
@@ -18,8 +19,8 @@
                         <th>
                             <button type="button" class="btn button-primary" data-toggle="modal" data-target="#mymodal">Create New Chat Room</button>
                         </th>
-                        <tr ng-repeat="room in sidebar.rooms track by $index" onclick="loadChat" style="cursor: pointer">
-                            <td>{{ room.name }}
+                        <tr ng-repeat="room in sidebar.rooms track by $index"  style="cursor: pointer">
+                            <td ><a ng-click="sidebar.selectRoom(room)">{{ room.name }}</a>
                             <button type="button" class="close pull-left" data-toggle="modal" data-target="#delrmmodal">×</button>
                             </td>
                         </tr>
@@ -74,6 +75,7 @@
         <script src="/scripts/controllers/ModalCtrl.js"></script>
         <script src="/scripts/controllers/SidebarCtrl.js"></script>
         <script src="/scripts/factories/messagesFactory.js"></script>
+        <script src="/scripts/controllers/ChatRoomCtrl.js"></script>
 
     </body>
 </html>
