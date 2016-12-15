@@ -1,9 +1,9 @@
 (function() {
-    function ChatRoom(Message) {
-        this.messages = Message.getByRoomID("-KYjbsv_yQRfzMMO6qY5");
+    function ChatRoom(Message, roomService) {
+        this.messages = Message.getByRoomID(roomService.activeRoomid);
     }
     
     angular
         .module("blocChat")
-        .controller("ChatRoom", ["Message", ChatRoom])
+        .controller("ChatRoom", ["Message", 'roomService', ChatRoom])
 })();

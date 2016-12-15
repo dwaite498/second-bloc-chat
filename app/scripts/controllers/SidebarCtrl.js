@@ -1,5 +1,5 @@
 (function() {
-    function SidebarCtrl(Room) {
+    function SidebarCtrl(Room, roomService) {
         this.rooms = Room.all;
         
   
@@ -8,10 +8,11 @@
         }
         
         this.selectRoom = function(room) {
-            console.log(room);
+            roomService.activeRoomid = room.$id;
+            
         }
     }
     angular
         .module('blocChat')
-        .controller('SidebarCtrl', ["Room", SidebarCtrl])
+        .controller('SidebarCtrl', ["Room", 'roomService', SidebarCtrl])
 })();

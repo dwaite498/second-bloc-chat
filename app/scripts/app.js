@@ -7,6 +7,9 @@ var config = {
         };
 firebase.initializeApp(config);
 
+
+
+
 //stateprovider for the app, directing routing the states to the templates and controllers
 (function() {
     function config($stateProvider, $locationProvider) {
@@ -32,3 +35,4 @@ firebase.initializeApp(config);
         .module('blocChat', ["ui.router", "firebase"])
         .config(config);
 })();
+

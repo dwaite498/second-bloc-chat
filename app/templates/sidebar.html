@@ -1,6 +1,12 @@
-<!--<table class="sideBar" ng-controller="SidebarCtrl as sidebar">
-        <th><button type="button" class="btn button default" ng-click="sidebar.createRoom()">Create New Chat Room</button></th>
-        <tr ng-repeat="room in sidebar.rooms track by $index">
-            <td>{{ room.name }}</td>
-        </tr>
-</table>-->
+<div class="col-xs-3">
+                    <table class="sideBar table-striped table-hover" ng-controller="SidebarCtrl as sidebar">
+                        <th>
+                            <button type="button" class="btn button-primary" data-toggle="modal" data-target="#mymodal">Create New Chat Room</button>
+                        </th>
+                        <tr ng-repeat="room in sidebar.rooms track by $index"  style="cursor: pointer">
+                            <td ><a ng-click="sidebar.selectRoom(room)">{{ room.name }}</a>
+                            <button type="button" class="close pull-left" data-toggle="modal" data-target="#delrmmodal">×</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>

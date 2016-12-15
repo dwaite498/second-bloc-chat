@@ -14,18 +14,7 @@
                 <img src="/assets/images/bloc-chat-logo.jpg"></a>
             </div>
             <div class="row">
-                <div class="col-xs-3">
-                    <table class="sideBar table-striped table-hover" ng-controller="SidebarCtrl as sidebar">
-                        <th>
-                            <button type="button" class="btn button-primary" data-toggle="modal" data-target="#mymodal">Create New Chat Room</button>
-                        </th>
-                        <tr ng-repeat="room in sidebar.rooms track by $index"  style="cursor: pointer">
-                            <td ><a ng-click="sidebar.selectRoom(room)">{{ room.name }}</a>
-                            <button type="button" class="close pull-left" data-toggle="modal" data-target="#delrmmodal">×</button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                
                 <div class="col-xs=6">
                     <ui-view> </ui-view>
                 </div>
@@ -70,6 +59,7 @@
         <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="/scripts/app.js"></script>
+        <script src="/scripts/services/roomService.js"></script>
         <script src="/scripts/controllers/Room.js"></script>
         <script src="/scripts/controllers/RoomCtrl.js"></script>
         <script src="/scripts/controllers/ModalCtrl.js"></script>
