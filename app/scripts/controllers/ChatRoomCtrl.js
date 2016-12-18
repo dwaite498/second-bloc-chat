@@ -1,6 +1,6 @@
 (function() {
     function ChatRoom(Message) {
-        this.messages = Message.getByRoomID("-KYjbsv_yQRfzMMO6qY5");
+        this.messages = Message.getByRoomID("room");
     }
     
     angular

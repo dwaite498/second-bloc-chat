@@ -13,3 +13,7 @@ dist/assets/images/bloc-logo-white.png
 dist/scripts/controllers/CreateRoomModal.js
 dist/styles/modal.css
 dist/templates/createRoomModal.html
+dist/scripts/controllers/ChatRoomCtrl.js
+dist/scripts/factories/messagesFactory.js
+dist/templates/chatroom.html
+dist/scripts/controllers/ChatRoomCtrl.js

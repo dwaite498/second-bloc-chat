@@ -11,7 +11,7 @@
     <body>
         <div class="container-fluid">
             <div class="row"><a class="logo">
-                <img src="/assets/images/bloc-chat-logo.jpg"></a>
+                <img ui-sref="room" src="/assets/images/bloc-chat-logo.jpg"></a>
             </div>
             <div class="row">
                 <div class="col-xs-3">
@@ -20,7 +20,7 @@
                             <button type="button" class="btn button-primary" data-toggle="modal" data-target="#mymodal">Create New Chat Room</button>
                         </th>
                         <tr ng-repeat="room in sidebar.rooms track by $index"  style="cursor: pointer">
-                            <td ><a ng-click="sidebar.selectRoom(room)">{{ room.name }}</a>
+                            <td ><span ng-click="sidebar.selectRoom(room)" ui-sref="chatroom" >{{ room.name }}</span>
                             <button type="button" class="close pull-left" data-toggle="modal" data-target="#delrmmodal">×</button>
                             </td>
                         </tr>
