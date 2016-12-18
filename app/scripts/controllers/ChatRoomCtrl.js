@@ -1,6 +1,11 @@
 (function() {
     function ChatRoom(Message, roomService) {
-        this.messages = Message.getByRoomID(roomService.activeRoomid);
+        var _this = this;
+        this.messages = [];
+        function newActiveRoom() {
+            _this.messages = Message.getByRoomID(roomService.getActiveRoomId());
+        };
+        roomService.subscribeToActiveRoomId(newActiveRoom);
     }
     
     angular

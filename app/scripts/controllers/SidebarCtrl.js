@@ -8,7 +8,8 @@
         }
         
         this.selectRoom = function(room) {
-            roomService.activeRoomid = room.$id;
+            roomService.setActiveRoomId(room.$id);
+            console.log (room);
             
         }
     }
