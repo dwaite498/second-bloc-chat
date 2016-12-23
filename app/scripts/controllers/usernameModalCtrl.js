@@ -1,9 +1,9 @@
 (function() {
-    function userNameModal(BlocChatCookies) {
-        
+    function userNameModal($cookies) {
+
     }
     
     angular
         .module('blocChat')
-        .controller('usernameModal', ['BlocChatCookies', userNameModal])
+        .controller('userNameModal', ['$cookies', userNameModal])
 })();
