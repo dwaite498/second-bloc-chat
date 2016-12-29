@@ -7,7 +7,8 @@
             <div class="modal-body" ng-controller="userNameModal">
                 <input type="text" id="username" ng-model="username">
                 <p>{{username}}</p>
-                <button type="button" class="btn btn-primary pull-right" ng-click="closeModal">Confirm username</button>
+                <button type="button" class="btn btn-primary pull-right" ng-click="addName()">Confirm username</button>
+                <p>{{$cookies.getAll()}}</p>
                 <br />
             </div>
             <div class="modal-footer">

@@ -10,5 +10,5 @@
     
     angular
         .module("blocChat")
-        .controller("ChatRoom", ["Message", 'roomService', ChatRoom])
+        .controller("ChatRoom", ["Message", 'roomService', '$cookies', ChatRoom])
 })();
