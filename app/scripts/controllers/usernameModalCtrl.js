@@ -1,15 +1,25 @@
 (function() {
-    function userNameModal($cookies, $scope, $uibModal) {
-        var newUser = $cookies;
-        this.addName = function($scope) {
-            newUser.put('blocChatCurrentUser', $scope.username)
-            console.log($scope.username);
-            $uibModal.close();
+    function userNameModal($cookies, $uibModalInstance) {
+        this.addName = function(username) {
+            
+            // 1. username is undefined
+                // do nothing
+            // 2. username is empty ('')
+                // do nothing
+            // 3. username is not empty
+                // set the cookie
+                // close the modal
+
+            if (!username || username === '') {
+                return;
+            }
+
+            $cookies.put('blocChatCurrentUser', username);
+            $uibModalInstance.close();
         }
-        newUser.put('someCookie', 'something')
     }
 
     angular
         .module('blocChat')
-        .controller('userNameModal', ['$cookies', '$scope', '$uibModal', userNameModal])
+        .controller('userNameModal', ['$cookies', '$uibModalInstance', userNameModal])
 })();
