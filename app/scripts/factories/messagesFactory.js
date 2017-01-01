@@ -3,7 +3,7 @@
         function currentTime() {
             var date = new Date();
             var h = date.getHours();
-            var m = date.getMinutes;
+            var m = date.getMinutes();
             var dayNight = "AM";
             
             if (h > 12) {
@@ -13,7 +13,7 @@
             if (m < 10) {
                 n = "0" + m;
             }
-            return h + ":" + m + ":" + dayNight;
+            return h + ":" + m + " " + dayNight;
         }
 
         return {
@@ -22,14 +22,15 @@
                 console.log(ref);
                 return $firebaseArray(ref);
             },
-            send: function(newMessage, roomID) {
+            send: function(newMessage, roomID, username) {
+                var ref = firebase.database().ref().child("messages");
                 var message = {
-                    username: $cookies.get('blocChatCurrentUser'),
+                    username: username,
                     content: newMessage,
                     sentAt: currentTime(),
                     roomID: roomID
                 }
-            $firebaseArray(ref).$add(message);
+                $firebaseArray(ref).$add(message);
             }
         };
     }

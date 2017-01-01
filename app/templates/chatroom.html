@@ -11,8 +11,6 @@
         </tr>
 
     </table>
-    <input type="text" class="messageBar form-control" ng-model="chatMessage" placeholder="New Message">
-    <button type="button" class="btn btn-input">Send</button>
-    <p>{{chatMessage}}</p>
-    
+    <input type="text" class="messageBar form-control" ng-model="chatroom.chatMessage" placeholder="New Message">
+    <button type="button" class="btn btn-input" ng-click="chatroom.newMessage(chatroom.chatMessage)">Send</button>
 </div>

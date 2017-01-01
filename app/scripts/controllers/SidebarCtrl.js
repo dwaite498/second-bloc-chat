@@ -9,8 +9,6 @@
         
         this.selectRoom = function(room) {
             roomService.setActiveRoomId(room.$id);
-            console.log (room);
-            
         }
     }
     angular
