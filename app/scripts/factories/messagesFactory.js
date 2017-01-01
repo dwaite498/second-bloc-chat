@@ -7,6 +7,10 @@
                 var ref = firebase.database().ref().child("messages").orderByChild("roomID").equalTo(roomID);
                 console.log(ref);
                 return $firebaseArray(ref);
+            },
+            send: function(newMessage) {
+                
+                //send message logic
             }
         };
     }
