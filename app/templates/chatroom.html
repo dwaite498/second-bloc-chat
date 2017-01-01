@@ -2,13 +2,15 @@
 <div class="chatroom">
     <table class="table table-striped">
         <tr>
-            <th>Room 1</th>
+            <th>{{RoomID}}</th>
             <th></th>
         </tr>
         <tr ng-repeat="message in chatroom.messages">
             <td><h4>{{message.username}}</h4>{{message.content}}</td>
             <td>{{message.sentAt}}</td>
         </tr>
-    </table>
 
+    </table>
+    <input type="text" class="form-control" ng-model="chatMessage" placeholder="New Message">
+    
 </div>
