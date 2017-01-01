@@ -7,6 +7,9 @@
         };
         roomService.subscribeToActiveRoomId(newActiveRoom);
     }
+    this.newMessage = function (Message) {
+        
+    }
     
     angular
         .module("blocChat")

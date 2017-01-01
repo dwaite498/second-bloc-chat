@@ -4,4 +4,10 @@
     height: 100%;
 }
 
-.
+.messageBar {
+    clear: left;
+}
+.btn .btn-input {
+    clear: left;
+    display: inline-block;
+}

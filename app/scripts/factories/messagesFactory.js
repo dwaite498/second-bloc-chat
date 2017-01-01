@@ -1,6 +1,20 @@
 (function() {
     function Message($firebaseArray) {
-
+        function currentTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes;
+            var dayNight = "AM";
+            
+            if (h > 12) {
+                h -= 12;
+                dayNight = "PM";
+            };
+            if (m < 10) {
+                n = "0" + m;
+            }
+            return h + ":" + m + ":" + dayNight;
+        }
 
         return {
             getByRoomID: function (roomID) {
@@ -8,9 +22,14 @@
                 console.log(ref);
                 return $firebaseArray(ref);
             },
-            send: function(newMessage) {
-                
-                //send message logic
+            send: function(newMessage, roomID) {
+                var message = {
+                    username: $cookies.get('blocChatCurrentUser'),
+                    content: newMessage,
+                    sentAt: currentTime(),
+                    roomID: roomID
+                }
+            $firebaseArray(ref).$add(message);
             }
         };
     }
