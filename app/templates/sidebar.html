@@ -5,7 +5,7 @@
                         </th>
                         <tr ng-repeat="room in sidebar.rooms track by $index"  style="cursor: pointer">
                             <td ><a ng-click="sidebar.selectRoom(room)" ui-sref="chatroom" >{{ room.name }}</a>
-                            <button type="button" class="close pull-left" data-toggle="modal" data-target="#delrmmodal">×</button>
+                            <button type="button" class="close pull-left" ng-click="sidebar.deleteRoom(room)">×</button>
                             </td>
                         </tr>
                     </table>
