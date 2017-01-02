@@ -11,7 +11,7 @@
                 dayNight = "PM";
             };
             if (m < 10) {
-                n = "0" + m;
+                m = "0" + m;
             }
             return h + ":" + m + " " + dayNight;
         }
